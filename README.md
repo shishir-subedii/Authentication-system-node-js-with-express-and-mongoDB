@@ -202,7 +202,7 @@ Responses:
 
 6. Change Password
 
-Endpoint: POST /change-password
+Endpoint: PUT /change-password
 Description: Allows users to change their password by verifying their current password.
 
 Request Body:
