@@ -3,14 +3,14 @@ Overview
 
 This documentation provides an overview of the authentication API endpoints, including their methods, request bodies, and response formats.
 Base URL
-http://<your-domain-or-ip>:<port>/api/auth
+http://yourdomain.com/api/auth -->enter your domain and port instead of yourdomain.com
 
 Endpoints:
 
 1. User Signup
 
 Endpoint: POST /signup
-Description: Registers a new user.
+Description: Registers a new user. You will get an OTP in your email and need to verify it under 10 minutes
 
 Request Body:
 {
@@ -249,9 +249,34 @@ Notes:
 
 
 
+FOR DEV PURPOSES:
+
+Your .env file should have:
+
+MONGODB_URI=XXX (Your connection url of mongoDB database)
+JWT_SECRET=XXX (Your secret: eg: *123456789@mySecret*)
+
+EMAIL_USER=XXX (Your email address) --> Assuming you are using your gmail account This email address is used to send email to the user. Better not to give your personal email
+
+EMAIL_PASS=XXX (Your app password of the email)  --> Not your email account password.
+
+
+To run this code in your local computer:
+- Install nodeJS.
+- Install mongoBD compass or use mongoDB atlas.
+- Get your mongoDB connection string.
+- open the code in VS code or any other code editor.
+- Create a .env file and fill your data.
+- Open terminal and type "npm install" . And also install nodemon and morgan if possible
+- type "npm run dev" or "npm start" in your terminal.
+- Your project runs now. Open postman or anything to test the api endpoint.
+
+
 Others:
 paste this code before app.listen (optional)
+
 // Function to delete expired unverified users
+const User = require('./models/User');
 const deleteExpiredUsers = async () => {
     const now = Date.now();
     try {

@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const errorMiddleware = require('./middlewares/errorMiddleware');
 const dbConnect = require('./config/db'); // Ensure the correct path to db.js
-const User = require('./models/User');
+
 
 dotenv.config();
 
