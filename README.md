@@ -205,6 +205,9 @@ Responses:
 Endpoint: PUT /change-password
 Description: Allows users to change their password by verifying their current password.
 
+Request Header:
+"token": "yourjwttokenfromlogin"
+
 Request Body:
 
 {
