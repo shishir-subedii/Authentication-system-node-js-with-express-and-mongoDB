@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors)
+app.use(cors());
 app.use('/api/auth', authRoutes);
 
 // Error handling middleware should be the last middleware
