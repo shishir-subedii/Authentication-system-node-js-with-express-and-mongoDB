@@ -288,7 +288,6 @@ const deleteExpiredUsers = async () => {
             otpExpiration: { $lt: now }, // OTP expiration time is less than current time
             isVerified: false,
         });
-
         console.log(`users checked at ${new Date()}`);
     } catch (err) {
         console.error('Error deleting expired unverified users:', err);
